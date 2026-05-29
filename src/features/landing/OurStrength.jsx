@@ -2,12 +2,18 @@ import React from 'react';
 import { Box, Container, Typography, Card, CardContent, Grid } from '@mui/material';
 import { BRAND } from '../../common/theme';
 import SectionHeading from '../../common/components/SectionHeading.jsx';
+import {
+  strengthHappyCustomers,
+  strengthEstablished,
+  strengthDevelopers,
+  strengthProjects,
+} from '../../assets/images';
 
 const stats = [
-  { value: '500+', label: 'Happy Customers', icon: 'src/assets/img/strength-happy-customers.webp' },
-  { value: 'Since 2000', label: 'Established in', icon: 'src/assets/img/strength-established.webp' },
-  { value: '50+', label: 'Skilled Developers', icon: 'src/assets/img/strength-developers.webp' },
-  { value: '300+', label: 'Projects Delivered', icon: 'src/assets/img/strength-projects.webp' },
+  { value: '500+', label: 'Happy Customers', icon: strengthHappyCustomers },
+  { value: 'Since 2000', label: 'Established in', icon: strengthEstablished },
+  { value: '50+', label: 'Skilled Developers', icon: strengthDevelopers },
+  { value: '300+', label: 'Projects Delivered', icon: strengthProjects },
 ];
 
 export default function OurStrength() {

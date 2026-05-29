@@ -2,20 +2,21 @@ import React from 'react';
 import { Box, Container, Typography, Card, CardContent, Grid } from '@mui/material';
 import { useReveal } from '../../common/hooks';
 import SectionHeading from '../../common/components/SectionHeading.jsx';
+import { weWorkWithRetail, weWorkWithAgencies, weWorkWithB2b } from '../../assets/images';
 
 const segments = [
   {
-    image: 'src/assets/img/we-work-with-retail.webp',
+    image: weWorkWithRetail,
     title: 'Retail Entrepreneur',
     desc: "We help B2C fashion, jewelry, beauty, home decor, electronics, and lifestyle brands thrive in the digital era with innovative eCommerce solutions. From seamless store management to enhanced customer experiences, our services are designed to boost your online presence, streamline operations, and maximize sales. Let's transform your business with the power of digitization!",
   },
   {
-    image: 'src/assets/img/we-work-with-agencies.webp',
+    image: weWorkWithAgencies,
     title: 'Agencies',
     desc: 'Empowering companies, independent software vendors and consulting firms. As their online affiliate, we assist agencies and allow them to successfully manage the programs of their company. We are increasing their existing team or taking full responsibility for their projects.',
   },
   {
-    image: 'src/assets/img/we-work-with-b2b.webp',
+    image: weWorkWithB2b,
     title: 'B2B Wholesale',
     desc: 'Transform your store into a B2B wholesale! As Shopify B2B experts, we help wholesalers streamline bulk orders, automate pricing, manage inventory, and enhance customer relationships. Unlock volume discounts, flexible payments, restricted access, and personalized pricing.',
   },

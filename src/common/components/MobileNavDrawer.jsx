@@ -10,6 +10,7 @@ import {
 } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import { BRAND } from '../theme';
+import { ShopifyMobileSection } from './ShopifyNav.jsx';
 
 export default function MobileNavDrawer({ navLinks, open, onClose }) {
   return (
@@ -21,17 +22,21 @@ export default function MobileNavDrawer({ navLinks, open, onClose }) {
           </IconButton>
         </Box>
         <List>
-          {navLinks.map((l) => (
-            <ListItem
-              key={l.label}
-              component="a"
-              href={l.href}
-              onClick={onClose}
-              sx={{ borderRadius: 1 }}
-            >
-              <ListItemText primary={l.label} primaryTypographyProps={{ fontWeight: 600 }} />
-            </ListItem>
-          ))}
+          {navLinks.map((l) =>
+            l.dropdown ? (
+              <ShopifyMobileSection key={l.label} onNavigate={onClose} />
+            ) : (
+              <ListItem
+                key={l.label}
+                component="a"
+                href={l.href}
+                onClick={onClose}
+                sx={{ borderRadius: 1 }}
+              >
+                <ListItemText primary={l.label} primaryTypographyProps={{ fontWeight: 600 }} />
+              </ListItem>
+            )
+          )}
           <ListItem>
             <Button
               fullWidth

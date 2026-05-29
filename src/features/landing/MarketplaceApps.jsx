@@ -1,43 +1,56 @@
 import React from 'react';
+import { Link as RouterLink } from 'react-router-dom';
 import { Box, Container, Typography, Card, CardContent, Grid, Button } from '@mui/material';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { useReveal } from '../../common/hooks';
 import { BRAND } from '../../common/theme';
+import { B2B_PATH } from '../../common/constants';
 import SectionHeading from '../../common/components/SectionHeading.jsx';
+import {
+  wholesaleB2bLogo,
+  pricingDiscountSuiteLogo,
+  bundleUpsellLogo,
+  shippingDiscountLogo,
+  hideShippingPaymentLogo,
+  swatchesLogo,
+  addOnsTierPricingLogo,
+} from '../../assets/images';
 
+// `to` → internal router link (the B2B page); apps without it fall back to "#".
 const apps = [
   {
-    icon: <Box component="img" src="src/assets/img/oscp-wholesale-b2b-app-logo.webp" alt="OSCP Wholesale B2B" sx={{ height: 64, width: 'auto' }} />,
+    logo: wholesaleB2bLogo,
     title: 'OSCP Wholesale B2B',
     desc: 'Tiered pricing and customer tag-based wholesale workflows built natively into Shopify.',
+    to: B2B_PATH,
   },
   {
-    icon: <Box component="img" src="src/assets/img/oscp-pricing-and-discount-suite-app-logo.webp" alt="OSCP Pricing & Discount Suite" sx={{ height: 64, width: 'auto' }} />,
+    logo: pricingDiscountSuiteLogo,
     title: 'OSCP Pricing & Discount Suite',
     desc: 'Run tiered discounts and customer-group promotions without writing a line of code.',
   },
   {
-    icon: <Box component="img" src="src/assets/img/oscp-bundle-and-upsell-app-logo.webp" alt="OSCP Bundle & Upsell" sx={{ height: 64, width: 'auto' }} />,
+    logo: bundleUpsellLogo,
     title: 'OSCP Bundle & Upsell',
     desc: 'Increase order value with smart product combinations and bundle pricing rules.',
   },
   {
-    icon: <Box component="img" src="src/assets/img/oscp-shipping-discount-app-logo.webp" alt="OSCP Shipping Discount" sx={{ height: 64, width: 'auto' }} />,
+    logo: shippingDiscountLogo,
     title: 'OSCP Shipping Discount',
     desc: 'Automate shipping savings by order value, location, or customer segment.',
   },
   {
-    icon: <Box component="img" src="src/assets/img/oscp-hide-shipping-and-payment-app-logo.webp" alt="OSCP Hide Shipping & Payment" sx={{ height: 64, width: 'auto' }} />,
+    logo: hideShippingPaymentLogo,
     title: 'OSCP Hide Shipping & Payment',
     desc: 'Rule-based visibility for checkout methods — show what fits, hide what doesn’t.',
   },
   {
-    icon: <Box component="img" src="src/assets/img/oscp-swatches-app-logo.webp" alt="OSCP Swatches" sx={{ height: 64, width: 'auto' }} />,
+    logo: swatchesLogo,
     title: 'OSCP Swatches',
     desc: 'Visual product options with color and image swatches for clearer choices.',
   },
   {
-    icon: <Box component="img" src="src/assets/img/oscp-add-ons-tier-pricing-app-logo.webp" alt="OSCP Add-Ons Tier Pricing" sx={{ height: 64, width: 'auto' }} />,
+    logo: addOnsTierPricingLogo,
     title: 'OSCP Add-Ons Tier Pricing',
     desc: 'Volume-based discounts on add-on products that drive repeat purchases.',
   },
@@ -74,7 +87,12 @@ export default function MarketplaceApps() {
                 }}
               >
                 <CardContent sx={{ p: 3, height: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
-                  <Box sx={{ color: BRAND.accent, mb: 2 }}>{a.icon}</Box>
+                  <Box
+                    component="img"
+                    src={a.logo}
+                    alt={a.title}
+                    sx={{ height: 64, width: 'auto', mb: 2 }}
+                  />
                   <Typography variant="h6" sx={{ fontWeight: 700, mb: 1 }}>
                     {a.title}
                   </Typography>
@@ -82,7 +100,7 @@ export default function MarketplaceApps() {
                     {a.desc}
                   </Typography>
                   <Button
-                    href="#"
+                    {...(a.to ? { component: RouterLink, to: a.to } : { href: '#' })}
                     endIcon={<ArrowForwardIcon />}
                     sx={{
                       mt: 'auto',

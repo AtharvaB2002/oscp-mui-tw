@@ -12,6 +12,8 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import MenuIcon from '@mui/icons-material/Menu';
 import { BRAND } from '../theme';
 import { navLinks } from '../constants';
+import { oscWhiteLogo } from '../../assets/images';
+import { ShopifyMegaMenu } from './ShopifyNav.jsx';
 import MobileNavDrawer from './MobileNavDrawer.jsx';
 
 export default function Header() {
@@ -59,29 +61,39 @@ export default function Header() {
               <Box
                 component={RouterLink}
                 to="/"
+                reloadDocument
                 aria-label="Go to homepage"
                 sx={{ display: 'inline-flex', alignItems: 'center' }}
               >
-                <img src="src/assets/img/OSC-White-logo.png" alt="OSC Professionals" />
+                <Box
+                  component="img"
+                  src={oscWhiteLogo}
+                  alt="OSC Professionals"
+                  sx={{ height: { xs: 36, md: 44 }, width: 'auto', display: 'block' }}
+                />
               </Box>
             </Box>
 
             <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 1, alignItems: 'center' }}>
-              {navLinks.map((l) => (
-                <Button
-                  key={l.label}
-                  href={l.href}
-                  sx={{
-                    color: '#ffffff',
-                    fontWeight: 600,
-                    textTransform: 'none',
-                    px: 1.5,
-                    '&:hover': { color: BRAND.accent, bgcolor: 'transparent' },
-                  }}
-                >
-                  {l.label}
-                </Button>
-              ))}
+              {navLinks.map((l) =>
+                l.dropdown ? (
+                  <ShopifyMegaMenu key={l.label} />
+                ) : (
+                  <Button
+                    key={l.label}
+                    href={l.href}
+                    sx={{
+                      color: '#ffffff',
+                      fontWeight: 600,
+                      textTransform: 'none',
+                      px: 1.5,
+                      '&:hover': { color: BRAND.accent, bgcolor: 'transparent' },
+                    }}
+                  >
+                    {l.label}
+                  </Button>
+                )
+              )}
               <Button
                 variant="contained"
                 href="#contact"
@@ -103,7 +115,7 @@ export default function Header() {
             <IconButton
               aria-label="Open menu"
               onClick={() => setMobileOpen(true)}
-              sx={{ display: { md: 'none' }, color: BRAND.primary }}
+              sx={{ display: { md: 'none' }, color: '#ffffff' }}
             >
               <MenuIcon />
             </IconButton>
