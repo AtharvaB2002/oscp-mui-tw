@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link as RouterLink } from 'react-router-dom';
 import {
   AppBar,
   Toolbar,
@@ -55,7 +56,14 @@ export default function Header() {
         <Container maxWidth="lg">
           <Toolbar disableGutters sx={{ minHeight: { xs: 64, md: 76 } }}>
             <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, flexGrow: 1 }}>
-              <img src="src/assets/img/OSC-White-logo.png" alt="homepage-logo" />
+              <Box
+                component={RouterLink}
+                to="/"
+                aria-label="Go to homepage"
+                sx={{ display: 'inline-flex', alignItems: 'center' }}
+              >
+                <img src="src/assets/img/OSC-White-logo.png" alt="OSC Professionals" />
+              </Box>
             </Box>
 
             <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 1, alignItems: 'center' }}>
