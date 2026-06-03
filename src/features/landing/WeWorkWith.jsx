@@ -60,7 +60,7 @@ export default function WeWorkWith() {
                     position: 'relative',
                     width: '100%',
                     aspectRatio: '1 / 1',
-                    backgroundImage: `url('${s.image}')`,
+                    backgroundImage: `url('${s.image.src}')`,
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                   }}

@@ -220,7 +220,8 @@ function FeatureVisual({ image, label }) {
       />
       <Box
         component="img"
-        src={image}
+        src={image.src}
+        srcSet={image.srcSet}
         alt={label}
         loading="lazy"
         sx={{

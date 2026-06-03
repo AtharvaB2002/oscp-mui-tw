@@ -1,0 +1,287 @@
+{
+  "OSC-White-logo": [
+    {
+      "file": "OSC-White-logo-lg.webp",
+      "width": 102,
+      "suffix": "lg"
+    }
+  ],
+  "call-now-ready-to-transform": [
+    {
+      "file": "call-now-ready-to-transform-lg.webp",
+      "width": 1440,
+      "suffix": "lg"
+    },
+    {
+      "file": "call-now-ready-to-transform-md.webp",
+      "width": 900,
+      "suffix": "md"
+    },
+    {
+      "file": "call-now-ready-to-transform-sm.webp",
+      "width": 500,
+      "suffix": "sm"
+    }
+  ],
+  "homepage-banner": [
+    {
+      "file": "homepage-banner-lg.webp",
+      "width": 1440,
+      "suffix": "lg"
+    },
+    {
+      "file": "homepage-banner-md.webp",
+      "width": 900,
+      "suffix": "md"
+    },
+    {
+      "file": "homepage-banner-sm.webp",
+      "width": 500,
+      "suffix": "sm"
+    }
+  ],
+  "oscp-add-ons-tier-pricing-app-logo": [
+    {
+      "file": "oscp-add-ons-tier-pricing-app-logo-lg.webp",
+      "width": 376,
+      "suffix": "lg"
+    }
+  ],
+  "oscp-bundle-and-upsell-app-logo": [
+    {
+      "file": "oscp-bundle-and-upsell-app-logo-lg.webp",
+      "width": 100,
+      "suffix": "lg"
+    }
+  ],
+  "oscp-hide-shipping-and-payment-app-logo": [
+    {
+      "file": "oscp-hide-shipping-and-payment-app-logo-lg.webp",
+      "width": 100,
+      "suffix": "lg"
+    }
+  ],
+  "oscp-pricing-and-discount-suite-app-logo": [
+    {
+      "file": "oscp-pricing-and-discount-suite-app-logo-lg.webp",
+      "width": 100,
+      "suffix": "lg"
+    }
+  ],
+  "oscp-shipping-discount-app-logo": [
+    {
+      "file": "oscp-shipping-discount-app-logo-lg.webp",
+      "width": 100,
+      "suffix": "lg"
+    }
+  ],
+  "oscp-swatches-app-logo": [
+    {
+      "file": "oscp-swatches-app-logo-lg.webp",
+      "width": 333,
+      "suffix": "lg"
+    }
+  ],
+  "oscp-wholesale-b2b-app-logo": [
+    {
+      "file": "oscp-wholesale-b2b-app-logo-lg.webp",
+      "width": 100,
+      "suffix": "lg"
+    }
+  ],
+  "portfolio-driven-by-style": [
+    {
+      "file": "portfolio-driven-by-style-lg.webp",
+      "width": 1440,
+      "suffix": "lg"
+    },
+    {
+      "file": "portfolio-driven-by-style-md.webp",
+      "width": 900,
+      "suffix": "md"
+    },
+    {
+      "file": "portfolio-driven-by-style-sm.webp",
+      "width": 500,
+      "suffix": "sm"
+    }
+  ],
+  "portfolio-my-bong-shop": [
+    {
+      "file": "portfolio-my-bong-shop-lg.webp",
+      "width": 1440,
+      "suffix": "lg"
+    },
+    {
+      "file": "portfolio-my-bong-shop-md.webp",
+      "width": 900,
+      "suffix": "md"
+    },
+    {
+      "file": "portfolio-my-bong-shop-sm.webp",
+      "width": 500,
+      "suffix": "sm"
+    }
+  ],
+  "portfolio-newwall": [
+    {
+      "file": "portfolio-newwall-lg.webp",
+      "width": 1440,
+      "suffix": "lg"
+    },
+    {
+      "file": "portfolio-newwall-md.webp",
+      "width": 900,
+      "suffix": "md"
+    },
+    {
+      "file": "portfolio-newwall-sm.webp",
+      "width": 500,
+      "suffix": "sm"
+    }
+  ],
+  "portfolio-rockher": [
+    {
+      "file": "portfolio-rockher-lg.webp",
+      "width": 1440,
+      "suffix": "lg"
+    },
+    {
+      "file": "portfolio-rockher-md.webp",
+      "width": 900,
+      "suffix": "md"
+    },
+    {
+      "file": "portfolio-rockher-sm.webp",
+      "width": 500,
+      "suffix": "sm"
+    }
+  ],
+  "portfolio-rxlabels": [
+    {
+      "file": "portfolio-rxlabels-lg.webp",
+      "width": 1440,
+      "suffix": "lg"
+    },
+    {
+      "file": "portfolio-rxlabels-md.webp",
+      "width": 900,
+      "suffix": "md"
+    },
+    {
+      "file": "portfolio-rxlabels-sm.webp",
+      "width": 500,
+      "suffix": "sm"
+    }
+  ],
+  "portfolio-vitalife": [
+    {
+      "file": "portfolio-vitalife-lg.webp",
+      "width": 1440,
+      "suffix": "lg"
+    },
+    {
+      "file": "portfolio-vitalife-md.webp",
+      "width": 900,
+      "suffix": "md"
+    },
+    {
+      "file": "portfolio-vitalife-sm.webp",
+      "width": 500,
+      "suffix": "sm"
+    }
+  ],
+  "portfolio-vitaliving": [
+    {
+      "file": "portfolio-vitaliving-lg.webp",
+      "width": 1440,
+      "suffix": "lg"
+    },
+    {
+      "file": "portfolio-vitaliving-md.webp",
+      "width": 900,
+      "suffix": "md"
+    },
+    {
+      "file": "portfolio-vitaliving-sm.webp",
+      "width": 500,
+      "suffix": "sm"
+    }
+  ],
+  "portfolio-voylite": [
+    {
+      "file": "portfolio-voylite-lg.webp",
+      "width": 1440,
+      "suffix": "lg"
+    },
+    {
+      "file": "portfolio-voylite-md.webp",
+      "width": 900,
+      "suffix": "md"
+    },
+    {
+      "file": "portfolio-voylite-sm.webp",
+      "width": 500,
+      "suffix": "sm"
+    }
+  ],
+  "strength-developers": [
+    {
+      "file": "strength-developers-lg.webp",
+      "width": 512,
+      "suffix": "lg"
+    },
+    {
+      "file": "strength-developers-sm.webp",
+      "width": 500,
+      "suffix": "sm"
+    }
+  ],
+  "strength-established": [
+    {
+      "file": "strength-established-lg.webp",
+      "width": 512,
+      "suffix": "lg"
+    },
+    {
+      "file": "strength-established-sm.webp",
+      "width": 500,
+      "suffix": "sm"
+    }
+  ],
+  "strength-happy-customers": [
+    {
+      "file": "strength-happy-customers-lg.webp",
+      "width": 143,
+      "suffix": "lg"
+    }
+  ],
+  "strength-projects": [
+    {
+      "file": "strength-projects-lg.webp",
+      "width": 143,
+      "suffix": "lg"
+    }
+  ],
+  "we-work-with-agencies": [
+    {
+      "file": "we-work-with-agencies-lg.webp",
+      "width": 380,
+      "suffix": "lg"
+    }
+  ],
+  "we-work-with-b2b": [
+    {
+      "file": "we-work-with-b2b-lg.webp",
+      "width": 380,
+      "suffix": "lg"
+    }
+  ],
+  "we-work-with-retail": [
+    {
+      "file": "we-work-with-retail-lg.webp",
+      "width": 380,
+      "suffix": "lg"
+    }
+  ]
+}

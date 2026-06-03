@@ -82,7 +82,8 @@ export default function Portfolio() {
                 >
                   <Box
                     component="img"
-                    src={p.image}
+                    src={p.image.src}
+                    srcSet={p.image.srcSet}
                     alt={p.name}
                     loading="lazy"
                     sx={{

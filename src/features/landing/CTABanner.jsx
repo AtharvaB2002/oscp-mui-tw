@@ -117,7 +117,8 @@ export default function CTABanner() {
               />
               <Box
                 component="img"
-                src={oscWhiteLogo}
+                src={oscWhiteLogo.src}
+                srcSet={oscWhiteLogo.srcSet}
                 alt="OSC"
                 sx={{
                   position: 'absolute',

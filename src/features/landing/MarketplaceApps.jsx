@@ -89,7 +89,8 @@ export default function MarketplaceApps() {
                 <CardContent sx={{ p: 3, height: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
                   <Box
                     component="img"
-                    src={a.logo}
+                    src={a.logo.src}
+                    srcSet={a.logo.srcSet}
                     alt={a.title}
                     sx={{ height: 64, width: 'auto', mb: 2 }}
                   />
