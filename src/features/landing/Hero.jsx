@@ -4,6 +4,7 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import { useParallaxRef } from '../../common/hooks';
 import { BRAND } from '../../common/theme';
+import { homepageBanner } from '../../assets/images';
 
 export default function Hero() {
   const heroOrb1Ref = useParallaxRef(0.35);
@@ -18,7 +19,7 @@ export default function Hero() {
         overflow: 'hidden',
         pt: { xs: 14, md: 18 },
         pb: { xs: 10, md: 14 },
-        backgroundImage: `url('src/assets/img/homepage-banner.webp')`,
+        backgroundImage: `url('${homepageBanner}')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',

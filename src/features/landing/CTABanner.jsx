@@ -3,6 +3,7 @@ import { Box, Container, Typography, Grid, Button } from '@mui/material';
 import { useParallaxRef } from '../../common/hooks';
 import { BRAND } from '../../common/theme';
 import { CIRCUIT_PATTERN } from '../../common/constants';
+import { oscWhiteLogo } from '../../assets/images';
 
 export default function CTABanner() {
   const ctaOrbRef = useParallaxRef(0.18, 3000);
@@ -105,7 +106,7 @@ export default function CTABanner() {
               />
               <Box
                 component="img"
-                src="src/assets/img/OSC-White-logo.png"
+                src={oscWhiteLogo}
                 alt="OSC"
                 sx={{
                   position: 'absolute',

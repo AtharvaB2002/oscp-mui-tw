@@ -5,16 +5,26 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import { useReveal } from '../../common/hooks';
 import { BRAND } from '../../common/theme';
 import SectionHeading from '../../common/components/SectionHeading.jsx';
+import {
+  portfolioRockher,
+  portfolioVoylite,
+  portfolioNewwall,
+  portfolioVitalife,
+  portfolioVitaliving,
+  portfolioMyBongShop,
+  portfolioDrivenByStyle,
+  portfolioRxlabels,
+} from '../../assets/images';
 
 const portfolio = [
-  { name: 'RockHer', image: 'src/assets/img/portfolio-rockher.webp' },
-  { name: 'VoyLite', image: 'src/assets/img/portfolio-voylite.webp' },
-  { name: 'Newwall', image: 'src/assets/img/portfolio-newwall.webp' },
-  { name: 'VitaLife', image: 'src/assets/img/portfolio-vitalife.webp' },
-  { name: 'Vitaliving', image: 'src/assets/img/portfolio-vitaliving.webp' },
-  { name: 'My-Bong-Shop', image: 'src/assets/img/portfolio-my-bong-shop.webp' },
-  { name: 'Driven By Style', image: 'src/assets/img/portfolio-driven-by-style.webp' },
-  { name: 'RxLabels', image: 'src/assets/img/portfolio-rxlabels.webp' },
+  { name: 'RockHer', image: portfolioRockher },
+  { name: 'VoyLite', image: portfolioVoylite },
+  { name: 'Newwall', image: portfolioNewwall },
+  { name: 'VitaLife', image: portfolioVitalife },
+  { name: 'Vitaliving', image: portfolioVitaliving },
+  { name: 'My-Bong-Shop', image: portfolioMyBongShop },
+  { name: 'Driven By Style', image: portfolioDrivenByStyle },
+  { name: 'RxLabels', image: portfolioRxlabels },
 ];
 
 export default function Portfolio() {

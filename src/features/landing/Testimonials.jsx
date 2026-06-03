@@ -2,6 +2,7 @@ import React from 'react';
 import { Box, Container, Typography, Card, CardContent, Avatar, Rating, Grid } from '@mui/material';
 import { useReveal } from '../../common/hooks';
 import { BRAND } from '../../common/theme';
+import { CIRCUIT_PATTERN } from '../../common/constants';
 import SectionHeading from '../../common/components/SectionHeading.jsx';
 
 // Fallback background: the original photo (Testimonials-Background) is no longer
@@ -55,6 +56,17 @@ export default function Testimonials() {
         containIntrinsicSize: '1px 600px',
       }}
     >
+      <Box
+        aria-hidden
+        sx={{
+          position: 'absolute',
+          inset: 0,
+          backgroundImage: CIRCUIT_PATTERN,
+          backgroundSize: '240px 240px',
+          opacity: 0.4,
+          pointerEvents: 'none',
+        }}
+      />
       <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1 }}>
         <SectionHeading
           light
