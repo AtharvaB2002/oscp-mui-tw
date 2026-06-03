@@ -25,8 +25,8 @@ import {
 } from 'lucide-react';
 import { BRAND } from '../../common/theme';
 import { CIRCUIT_PATTERN } from '../../common/constants';
+import Portfolio from '../landing/Portfolio.jsx';
 import {
-  portfolioVoylite,
   featTierPricing,
   featImportExport,
   featCartDiscount,
@@ -737,62 +737,8 @@ export default function B2BWholesalePricingPage() {
         </Container>
       </Box>
 
-      {/* ── Portfolio ── */}
-      <Box component="section" sx={{ py: { xs: 8, md: 12 }, bgcolor: '#fff' }}>
-        <Container maxWidth="lg">
-          <Heading
-            title="Portfolio"
-            subtitle="A glimpse into real-world web development projects and client collaborations."
-          />
-          <Paper
-            elevation={0}
-            sx={{
-              borderRadius: 3,
-              overflow: 'hidden',
-              border: '1px solid rgba(10,37,64,0.1)',
-              boxShadow: '0 20px 44px -28px rgba(10,37,64,0.25)',
-            }}
-          >
-            <Grid container alignItems="stretch">
-              <Grid item xs={12} md={7}>
-                <Box sx={{ p: { xs: 3, md: 5 } }}>
-                  <Box
-                    sx={{
-                      display: 'inline-block',
-                      px: 1.5,
-                      py: 0.5,
-                      mb: 2,
-                      borderRadius: 999,
-                      bgcolor: 'rgba(0,164,189,0.12)',
-                      color: BRAND.accentDark,
-                      fontWeight: 700,
-                      fontSize: 12,
-                    }}
-                  >
-                    Voylite
-                  </Box>
-                  <Typography variant="h5" sx={{ fontWeight: 800, color: BRAND.primary, mb: 1.5 }}>
-                    Magento 2 Community Support &amp; Web Development Activities
-                  </Typography>
-                  <Typography sx={{ color: 'rgba(10,37,64,0.72)', lineHeight: 1.7 }}>
-                    Ongoing support, performance tuning, and feature development for a growing commerce
-                    brand — keeping the storefront fast, stable, and ready to scale.
-                  </Typography>
-                </Box>
-              </Grid>
-              <Grid item xs={12} md={5}>
-                <Box
-                  component="img"
-                  src={portfolioVoylite.src}
-                  srcSet={portfolioVoylite.srcSet}
-                  alt="Voylite project"
-                  sx={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', minHeight: 220 }}
-                />
-              </Grid>
-            </Grid>
-          </Paper>
-        </Container>
-      </Box>
+      {/* ── Portfolio (shared carousel, reused from the landing page) ── */}
+      <Portfolio />
 
       {/* ── Need more help? ── */}
       <Box component="section" sx={{ py: { xs: 9, md: 13 }, background: DARK_GRAD, color: '#fff' }}>
