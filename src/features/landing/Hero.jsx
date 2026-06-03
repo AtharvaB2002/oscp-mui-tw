@@ -110,7 +110,7 @@ export default function Hero() {
               <Button
                 size="large"
                 variant="contained"
-                href="#contact"
+                href="/#contact"
                 endIcon={<ArrowForwardIcon />}
                 sx={{
                   bgcolor: BRAND.accent,

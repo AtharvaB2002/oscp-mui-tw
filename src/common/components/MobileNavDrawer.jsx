@@ -41,7 +41,7 @@ export default function MobileNavDrawer({ navLinks, open, onClose }) {
             <Button
               fullWidth
               variant="contained"
-              href="#contact"
+              href="/#contact"
               sx={{ bgcolor: BRAND.accent, '&:hover': { bgcolor: BRAND.accentDark } }}
               onClick={onClose}
             >
