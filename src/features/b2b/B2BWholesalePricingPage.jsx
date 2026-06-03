@@ -25,8 +25,8 @@ import {
 } from 'lucide-react';
 import { BRAND } from '../../common/theme';
 import { CIRCUIT_PATTERN } from '../../common/constants';
+import Portfolio from '../landing/Portfolio.jsx';
 import {
-  portfolioVoylite,
   featTierPricing,
   featImportExport,
   featCartDiscount,
@@ -57,7 +57,7 @@ function AppScreenshotSlider() {
   const go = (next) => setIndex(((next % count) + count) % count);
 
   return (
-    <Box sx={{ position: 'relative', px: { xs: 0, sm: 7, md: 9 } }}>
+    <Box sx={{ position: 'relative', px: { xs: 0, sm: 4 } }}>
       <Box
         sx={{
           overflow: 'hidden',
@@ -323,86 +323,6 @@ const differentiators = [
   },
 ];
 
-// ── Tier-pricing mock for the hero ──────────────────────────────────────────
-function HeroTierCard() {
-  const rows = [
-    ['1 – 9', '$24.99'],
-    ['10 – 49', '$21.99'],
-    ['50 – 99', '$18.99'],
-    ['100 +', '$15.99'],
-  ];
-  return (
-    <Paper
-      elevation={0}
-      sx={{
-        borderRadius: 3,
-        overflow: 'hidden',
-        boxShadow: '0 30px 60px -28px rgba(0,0,0,0.6)',
-        border: '1px solid rgba(255,255,255,0.15)',
-        maxWidth: 380,
-        mx: 'auto',
-      }}
-    >
-      <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, px: 2.5, py: 1.5, bgcolor: '#f3f6f9' }}>
-        <Tag size={18} color={GOLD} />
-        <Typography sx={{ fontWeight: 800, fontSize: 14, color: BRAND.primary }}>Tier Pricing</Typography>
-      </Box>
-      <Box sx={{ p: 2.5 }}>
-        <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 2 }}>
-          <Box
-            sx={{
-              width: 56,
-              height: 56,
-              borderRadius: 2,
-              bgcolor: '#eef2f6',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-            }}
-          >
-            <ShoppingCart size={24} color="rgba(10,37,64,0.4)" />
-          </Box>
-          <Box>
-            <Typography sx={{ fontWeight: 700, fontSize: 14, color: BRAND.primary }}>
-              Pure White Basic Tee
-            </Typography>
-            <Typography sx={{ fontSize: 12, color: 'rgba(10,37,64,0.55)' }}>Wholesale tier pricing</Typography>
-          </Box>
-        </Box>
-        <Box
-          sx={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            px: 1.5,
-            py: 0.75,
-            bgcolor: '#f7f9fb',
-            borderRadius: 1,
-            mb: 0.5,
-          }}
-        >
-          <Typography sx={{ fontSize: 11, fontWeight: 700, color: 'rgba(10,37,64,0.55)' }}>QUANTITY</Typography>
-          <Typography sx={{ fontSize: 11, fontWeight: 700, color: 'rgba(10,37,64,0.55)' }}>PRICE</Typography>
-        </Box>
-        {rows.map(([q, p]) => (
-          <Box
-            key={q}
-            sx={{
-              display: 'flex',
-              justifyContent: 'space-between',
-              px: 1.5,
-              py: 1,
-              borderBottom: '1px solid rgba(10,37,64,0.06)',
-            }}
-          >
-            <Typography sx={{ fontSize: 13, color: BRAND.primary, fontWeight: 600 }}>{q}</Typography>
-            <Typography sx={{ fontSize: 13, color: BRAND.accentDark, fontWeight: 800 }}>{p}</Typography>
-          </Box>
-        ))}
-      </Box>
-    </Paper>
-  );
-}
-
 export default function B2BWholesalePricingPage() {
   return (
     <Box component="main">
@@ -431,7 +351,7 @@ export default function B2BWholesalePricingPage() {
         />
         <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1 }}>
           <Grid container spacing={6} alignItems="center">
-            <Grid item xs={12} md={6}>
+            <Grid item xs={12} md={4}>
               <Box
                 sx={{
                   display: 'inline-flex',
@@ -522,9 +442,11 @@ export default function B2BWholesalePricingPage() {
                 Store password: <Box component="span" sx={{ color: BRAND.accent, fontWeight: 700 }}>oscp123</Box>
               </Typography>
             </Grid>
-            <Grid item xs={12} md={6}>
-              <HeroTierCard />
-            </Grid>
+            {sliderImages.length > 0 && (
+              <Grid item xs={12} md={8}>
+                <AppScreenshotSlider />
+              </Grid>
+            )}
           </Grid>
         </Container>
       </Box>
@@ -571,19 +493,6 @@ export default function B2BWholesalePricingPage() {
           </Paper>
         </Container>
       </Box>
-
-      {/* ── App screenshot slider ── */}
-      {sliderImages.length > 0 && (
-        <Box component="section" sx={{ py: { xs: 8, md: 11 }, bgcolor: '#fff' }}>
-          <Container maxWidth="lg">
-            <Heading
-              title="OSCP B2B Wholesale Pricing App"
-              subtitle="Wholesale pricing based on customer tag & create b2b customers"
-            />
-            <AppScreenshotSlider />
-          </Container>
-        </Box>
-      )}
 
       {/* ── Features ── */}
       <Box component="section" sx={{ py: { xs: 8, md: 12 }, bgcolor: FEATURE_BG }}>
@@ -716,7 +625,7 @@ export default function B2BWholesalePricingPage() {
             <Button
               size="large"
               variant="contained"
-              href="#contact"
+              href="/#contact"
               endIcon={<ArrowRight size={18} />}
               sx={{
                 flexShrink: 0,
@@ -736,61 +645,8 @@ export default function B2BWholesalePricingPage() {
         </Container>
       </Box>
 
-      {/* ── Portfolio ── */}
-      <Box component="section" sx={{ py: { xs: 8, md: 12 }, bgcolor: '#fff' }}>
-        <Container maxWidth="lg">
-          <Heading
-            title="Portfolio"
-            subtitle="A glimpse into real-world web development projects and client collaborations."
-          />
-          <Paper
-            elevation={0}
-            sx={{
-              borderRadius: 3,
-              overflow: 'hidden',
-              border: '1px solid rgba(10,37,64,0.1)',
-              boxShadow: '0 20px 44px -28px rgba(10,37,64,0.25)',
-            }}
-          >
-            <Grid container alignItems="stretch">
-              <Grid item xs={12} md={7}>
-                <Box sx={{ p: { xs: 3, md: 5 } }}>
-                  <Box
-                    sx={{
-                      display: 'inline-block',
-                      px: 1.5,
-                      py: 0.5,
-                      mb: 2,
-                      borderRadius: 999,
-                      bgcolor: 'rgba(0,164,189,0.12)',
-                      color: BRAND.accentDark,
-                      fontWeight: 700,
-                      fontSize: 12,
-                    }}
-                  >
-                    Voylite
-                  </Box>
-                  <Typography variant="h5" sx={{ fontWeight: 800, color: BRAND.primary, mb: 1.5 }}>
-                    Magento 2 Community Support &amp; Web Development Activities
-                  </Typography>
-                  <Typography sx={{ color: 'rgba(10,37,64,0.72)', lineHeight: 1.7 }}>
-                    Ongoing support, performance tuning, and feature development for a growing commerce
-                    brand — keeping the storefront fast, stable, and ready to scale.
-                  </Typography>
-                </Box>
-              </Grid>
-              <Grid item xs={12} md={5}>
-                <Box
-                  component="img"
-                  src={portfolioVoylite}
-                  alt="Voylite project"
-                  sx={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', minHeight: 220 }}
-                />
-              </Grid>
-            </Grid>
-          </Paper>
-        </Container>
-      </Box>
+      {/* ── Portfolio (shared carousel, reused from the landing page) ── */}
+      <Portfolio />
 
       {/* ── Need more help? ── */}
       <Box component="section" sx={{ py: { xs: 9, md: 13 }, background: DARK_GRAD, color: '#fff' }}>

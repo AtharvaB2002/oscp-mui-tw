@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Box, Container, Typography, Grid, Button } from '@mui/material';
 import { useParallaxRef } from '../../common/hooks';
 import { BRAND } from '../../common/theme';
@@ -7,6 +7,17 @@ import { oscWhiteLogo } from '../../assets/images';
 
 export default function CTABanner() {
   const ctaOrbRef = useParallaxRef(0.18, 3000);
+
+  // This section is lazy-loaded below the fold, so a fresh load of /#contact
+  // can't natively scroll here (the element doesn't exist yet). Once it mounts,
+  // jump straight to it (no animation) if the URL is targeting it.
+  useEffect(() => {
+    if (window.location.hash === '#contact') {
+      document
+        .getElementById('contact')
+        ?.scrollIntoView({ behavior: 'auto', block: 'start' });
+    }
+  }, []);
 
   return (
     <Box

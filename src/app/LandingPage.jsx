@@ -7,7 +7,11 @@ import WeWorkWith from '../features/landing/WeWorkWith.jsx';
 const LandingBelow = lazy(() => import('./LandingBelow.jsx'));
 
 export default function LandingPage() {
-  const [belowReady, setBelowReady] = useState(false);
+  // Mount the below-fold sections right away when the URL targets an anchor that
+  // lives down there (e.g. /#contact) so the browser can actually scroll to it.
+  const [belowReady, setBelowReady] = useState(
+    () => typeof window !== 'undefined' && window.location.hash === '#contact'
+  );
 
   // Prefetch the lazy chunk during idle time so it's ready when user scrolls.
   useEffect(() => {

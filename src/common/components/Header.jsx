@@ -96,7 +96,7 @@ export default function Header() {
               )}
               <Button
                 variant="contained"
-                href="#contact"
+                href="/#contact"
                 endIcon={<ArrowForwardIcon />}
                 sx={{
                   ml: 1.5,
