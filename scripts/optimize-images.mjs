@@ -1,5 +1,5 @@
 import sharp from 'sharp';
-import { readdir, mkdir } from 'node:fs/promises';
+import { readdir, mkdir, rm, writeFile } from 'node:fs/promises';
 import { join, parse } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -13,17 +13,24 @@ const VARIANTS = [
   { width: 500, suffix: 'sm' },
 ];
 
-const JPG_QUALITY = 78;
 const WEBP_QUALITY = 70;
 
 async function run() {
+  // Start from a clean optimized/ folder so only current outputs remain.
+  await rm(OUT, { recursive: true, force: true });
   await mkdir(OUT, { recursive: true });
-  const files = (await readdir(SRC)).filter((f) => /\.(jpe?g|png)$/i.test(f));
+
+  const files = (await readdir(SRC)).filter((f) => /\.png$/i.test(f));
 
   if (files.length === 0) {
-    console.warn(`No .jpg/.jpeg/.png files found in ${SRC} — nothing to optimize.`);
+    console.warn(`No .png files found in ${SRC} — nothing to optimize.`);
     return;
   }
+
+  // manifest maps base name -> [{ file, width, suffix }] so the app can build
+  // accurate srcSet descriptors (small images aren't upscaled, so their real
+  // width may be smaller than the variant target).
+  const manifest = {};
 
   for (const file of files) {
     const { name } = parse(file);
@@ -31,27 +38,36 @@ async function run() {
     const meta = await sharp(input).metadata();
     console.log(`\n${file} — ${meta.width}×${meta.height}`);
 
+    const seenWidths = new Set();
+    manifest[name] = [];
+
     for (const v of VARIANTS) {
       const w = Math.min(v.width, meta.width);
-      const baseName = `${name}-${v.suffix}`;
+      // Skip a variant whose width duplicates a larger one already produced
+      // (e.g. a 143px logo would otherwise emit three identical files).
+      if (seenWidths.has(w)) {
+        console.log(`  ${v.suffix}: ${w}w → skipped (duplicate width)`);
+        continue;
+      }
+      seenWidths.add(w);
 
-      const jpgPath = join(OUT, `${baseName}.jpg`);
-      const webpPath = join(OUT, `${baseName}.webp`);
-
-      await sharp(input)
-        .resize({ width: w, withoutEnlargement: true })
-        .jpeg({ quality: JPG_QUALITY, mozjpeg: true, progressive: true })
-        .toFile(jpgPath);
-
+      const outFile = `${name}-${v.suffix}.webp`;
       await sharp(input)
         .resize({ width: w, withoutEnlargement: true })
         .webp({ quality: WEBP_QUALITY, effort: 5 })
-        .toFile(webpPath);
+        .toFile(join(OUT, outFile));
 
-      console.log(`  ${v.suffix}: ${w}w → jpg + webp`);
+      manifest[name].push({ file: outFile, width: w, suffix: v.suffix });
+      console.log(`  ${v.suffix}: ${w}w → webp`);
     }
   }
-  console.log('\nDone. Optimized files in src/assets/optimized/');
+
+  await writeFile(
+    join(OUT, 'manifest.json'),
+    JSON.stringify(manifest, null, 2) + '\n',
+  );
+
+  console.log('\nDone. WebP variants + manifest.json in src/assets/optimized/');
 }
 
 run().catch((e) => {

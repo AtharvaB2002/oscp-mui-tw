@@ -19,7 +19,7 @@ export default function Hero() {
         overflow: 'hidden',
         pt: { xs: 14, md: 18 },
         pb: { xs: 10, md: 14 },
-        backgroundImage: `url('${homepageBanner}')`,
+        backgroundImage: `url('${homepageBanner.src}')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',

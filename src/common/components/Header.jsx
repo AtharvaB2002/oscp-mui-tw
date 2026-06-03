@@ -67,7 +67,8 @@ export default function Header() {
               >
                 <Box
                   component="img"
-                  src={oscWhiteLogo}
+                  src={oscWhiteLogo.src}
+                  srcSet={oscWhiteLogo.srcSet}
                   alt="OSC Professionals"
                   sx={{ height: { xs: 36, md: 44 }, width: 'auto', display: 'block' }}
                 />

@@ -220,7 +220,8 @@ function FeatureVisual({ image, label }) {
       />
       <Box
         component="img"
-        src={image}
+        src={image.src}
+        srcSet={image.srcSet}
         alt={label}
         loading="lazy"
         sx={{
@@ -782,7 +783,8 @@ export default function B2BWholesalePricingPage() {
               <Grid item xs={12} md={5}>
                 <Box
                   component="img"
-                  src={portfolioVoylite}
+                  src={portfolioVoylite.src}
+                  srcSet={portfolioVoylite.srcSet}
                   alt="Voylite project"
                   sx={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', minHeight: 220 }}
                 />

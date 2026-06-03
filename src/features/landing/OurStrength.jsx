@@ -61,7 +61,8 @@ export default function OurStrength() {
                 >
                   <Box
                     component="img"
-                    src={s.icon}
+                    src={s.icon.src}
+                    srcSet={s.icon.srcSet}
                     alt=""
                     aria-hidden
                     sx={{
